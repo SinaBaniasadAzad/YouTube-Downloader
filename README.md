@@ -1,4 +1,4 @@
-# YouTube-Downloader
+{
   "nbformat": 4,
   "nbformat_minor": 0,
   "metadata": {
@@ -14,3 +14,267 @@
       "name": "python"
     }
   },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/SinaBaniasadAzad/YouTube-Downloader/blob/main/YouTube%20Downloader.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "w0Xw0V6M9Kcn",
+        "outputId": "5784e85b-7f78-44ac-812a-cb6394c7d0fa"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/\n",
+            "Collecting pytube\n",
+            "  Downloading pytube-12.1.2-py3-none-any.whl (57 kB)\n",
+            "\u001b[2K     \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m57.0/57.0 KB\u001b[0m \u001b[31m1.7 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[?25hInstalling collected packages: pytube\n",
+            "Successfully installed pytube-12.1.2\n"
+          ]
+        }
+      ],
+      "source": [
+        "pip install pytube"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!pytube https://www.youtube.com/playlist?list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "F803zDLx9PDT",
+        "outputId": "22f46562-85a5-47bd-dd5d-1d95c9b2cb3b"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Loading playlist...\n",
+            "Welcome (Deep Learning Specialization C1W1L01).mp4 | 6 MB\n",
+            " ↳ || 100.0%\n",
+            "What is a Neural Network (C1W1L02).mp4 | 7 MB\n",
+            " ↳ || 100.0%\n",
+            "Supervised Learning with a Neural Network (C1W1L03).mp4 | 10 MB\n",
+            " ↳ || 100.0%\n",
+            "Why is deep learning taking off (C1W1L04).mp4 | 13 MB\n",
+            " ↳ || 100.0%\n",
+            "About This Course (C1W1L05).mp4 | 2 MB\n",
+            " ↳ || 100.0%\n",
+            "Traceback (most recent call last):\n",
+            "  File \"/usr/lib/python3.10/http/client.py\", line 566, in _get_chunk_left\n",
+            "    chunk_left = self._read_next_chunk_size()\n",
+            "  File \"/usr/lib/python3.10/http/client.py\", line 526, in _read_next_chunk_size\n",
+            "    line = self.fp.readline(_MAXLINE + 1)\n",
+            "  File \"/usr/lib/python3.10/socket.py\", line 705, in readinto\n",
+            "    return self._sock.recv_into(b)\n",
+            "  File \"/usr/lib/python3.10/ssl.py\", line 1274, in recv_into\n",
+            "    return self.read(nbytes, buffer)\n",
+            "  File \"/usr/lib/python3.10/ssl.py\", line 1130, in read\n",
+            "    return self._sslobj.read(len, buffer)\n",
+            "KeyboardInterrupt\n",
+            "\n",
+            "During handling of the above exception, another exception occurred:\n",
+            "\n",
+            "Traceback (most recent call last):\n",
+            "  File \"/usr/local/bin/pytube\", line 8, in <module>\n",
+            "    sys.exit(main())\n",
+            "  File \"/usr/local/lib/python3.10/dist-packages/pytube/cli.py\", line 46, in main\n",
+            "    _perform_args_on_youtube(youtube_video, args)\n",
+            "  File \"/usr/local/lib/python3.10/dist-packages/pytube/cli.py\", line 60, in _perform_args_on_youtube\n",
+            "    download_highest_resolution_progressive(\n",
+            "  File \"/usr/local/lib/python3.10/dist-packages/pytube/cli.py\", line 474, in download_highest_resolution_progressive\n",
+            "    stream = youtube.streams.get_highest_resolution()\n",
+            "  File \"/usr/local/lib/python3.10/dist-packages/pytube/__main__.py\", line 295, in streams\n",
+            "    self.check_availability()\n",
+            "  File \"/usr/local/lib/python3.10/dist-packages/pytube/__main__.py\", line 210, in check_availability\n",
+            "    status, messages = extract.playability_status(self.watch_html)\n",
+            "  File \"/usr/local/lib/python3.10/dist-packages/pytube/__main__.py\", line 102, in watch_html\n",
+            "    self._watch_html = request.get(url=self.watch_url)\n",
+            "  File \"/usr/local/lib/python3.10/dist-packages/pytube/request.py\", line 54, in get\n",
+            "    return response.read().decode(\"utf-8\")\n",
+            "  File \"/usr/lib/python3.10/http/client.py\", line 460, in read\n",
+            "    return self._read_chunked(amt)\n",
+            "  File \"/usr/lib/python3.10/http/client.py\", line 583, in _read_chunked\n",
+            "    chunk_left = self._get_chunk_left()\n",
+            "  File \"/usr/lib/python3.10/http/client.py\", line 566, in _get_chunk_left\n",
+            "    chunk_left = self._read_next_chunk_size()\n",
+            "KeyboardInterrupt\n",
+            "^C\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!du -sh"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ytM-cWybHCI1",
+        "outputId": "b14542e2-d8f5-4fd8-8708-b0546256c621"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "25G\t.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# all files are saved in a folder called '...'\n",
+        "!zip -r NYU.zip 'Andrew_NG_Deep_Learning'"
+      ],
+      "metadata": {
+        "id": "BUyzFnuD9YLc",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "16c4c67d-0201-4df1-a43d-32927c4c6189"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "  adding: NYU Deep Learning SP21/ (stored 0%)\n",
+            "  adding: NYU Deep Learning SP21/042 – Recurrent neural networks vanilla and gated (LSTM).mp4 (deflated 2%)\n",
+            "  adding: NYU Deep Learning SP21/052 – But what are these EBMs used for.mp4 (deflated 1%)\n",
+            "  adding: NYU Deep Learning SP21/14L – Lagrangian backpropagation final project winners and Q&A session.mp4 (deflated 1%)\n",
+            "  adding: NYU Deep Learning SP21/11 – Graph Convolutional Networks (GCNs).mp4 (deflated 3%)\n",
+            "  adding: NYU Deep Learning SP21/051 – Latent Variable Energy Based Models (LV-EBMs) inference.mp4 (deflated 4%)\n",
+            "  adding: NYU Deep Learning SP21/05L – Joint embedding method and latent variable energy based models (LV-EBMs).mp4 (deflated 0%)\n",
+            "  adding: NYU Deep Learning SP21/02L – Modules and architectures.mp4 (deflated 2%)\n",
+            "  adding: NYU Deep Learning SP21/01 – History and resources.mp4 (deflated 1%)\n",
+            "  adding: NYU Deep Learning SP21/10P – Non-contrastive joint embedding methods (JEMs) for self-supervised learning (SSL).mp4 (deflated 2%)\n",
+            "  adding: NYU Deep Learning SP21/06 – Latent Variable Energy Based Models (LV-EBMs) training.mp4 (deflated 3%)\n",
+            "  adding: NYU Deep Learning SP21/06L – Latent variable EBMs for structured prediction.mp4 (deflated 0%)\n",
+            "  adding: NYU Deep Learning SP21/13 – The Truck Backer-Upper.mp4 (deflated 3%)\n",
+            "  adding: NYU Deep Learning SP21/AI2S Xmas Seminar - Dr Alfredo Canziani (NYU) - Energy-Based Self-Supervised Learning.mp4 (deflated 4%)\n",
+            "  adding: NYU Deep Learning SP21/01L – Gradient descent and the backpropagation algorithm.mp4 (deflated 2%)\n",
+            "  adding: NYU Deep Learning SP21/12 – Planning and control.mp4 (deflated 4%)\n",
+            "  adding: NYU Deep Learning SP21/03 – Tools classification with neural nets PyTorch implementation.mp4 (deflated 4%)\n",
+            "  adding: NYU Deep Learning SP21/041 – Natural signals properties and the convolution.mp4 (deflated 3%)\n",
+            "  adding: NYU Deep Learning SP21/03L – Parameter sharing recurrent and convolutional nets.mp4 (deflated 1%)\n",
+            "  adding: NYU Deep Learning SP21/07L – PCA AE K-means Gaussian mixture model sparse coding and intuitive VAE.mp4 (deflated 1%)\n",
+            "  adding: NYU Deep Learning SP21/10 – Self  cross hard  soft attention and the Transformer.mp4 (deflated 3%)\n",
+            "  adding: NYU Deep Learning SP21/09L – Differentiable associative memories attention and transformers.mp4 (deflated 0%)\n",
+            "  adding: NYU Deep Learning SP21/02 – Neural nets rotation and squashing.mp4 (deflated 1%)\n",
+            "  adding: NYU Deep Learning SP21/04L – ConvNet in practice.mp4 (deflated 1%)\n",
+            "  adding: NYU Deep Learning SP21/13L – Optimisation for Deep Learning.mp4 (deflated 1%)\n",
+            "  adding: NYU Deep Learning SP21/09 – AE DAE and VAE with PyTorch generative adversarial networks (GAN) and code.mp4 (deflated 3%)\n",
+            "  adding: NYU Deep Learning SP21/08L – Self-supervised learning and variational inference.mp4 (deflated 0%)\n",
+            "  adding: NYU Deep Learning SP21/10L – Self-supervised learning in computer vision.mp4 (deflated 7%)\n",
+            "  adding: NYU Deep Learning SP21/12L – Low resource machine translation.mp4 (deflated 2%)\n",
+            "  adding: NYU Deep Learning SP21/09P – Contrastive joint embedding methods (JEMs) for self-supervised learning (SSL).mp4 (deflated 2%)\n",
+            "  adding: NYU Deep Learning SP21/07 – Unsupervised learning autoencoding the targets.mp4 (deflated 3%)\n",
+            "  adding: NYU Deep Learning SP21/11L – Speech recognition and Graph Transformer Networks.mp4 (deflated 6%)\n",
+            "  adding: NYU Deep Learning SP21/08 – From LV-EBM to target prop to (vanilla denoising contractive variational) autoencoder.mp4 (deflated 5%)\n",
+            "  adding: NYU Deep Learning SP21/14 – Prediction and Planning Under Uncertainty.mp4 (deflated 3%)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!ls -lh"
+      ],
+      "metadata": {
+        "id": "4XUsdW_jGvbd",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "a3504c88-65e6-41c3-9ae9-43d4d3c33a66"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "total 13G\n",
+            "drwxr-xr-x 2 root root 4.0K Mar 22 21:01 'NYU Deep Learning SP21'\n",
+            "-rw-r--r-- 1 root root  13G Mar 22 21:12  NYU.zip\n",
+            "drwxr-xr-x 1 root root 4.0K Mar 21 22:54  sample_data\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from google.colab import drive\n",
+        "drive.mount('/content/drive')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "tB9ZGzzBK3yQ",
+        "outputId": "6f180b32-f4ee-456a-9aa6-8e657bc1bdb9"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Mounted at /content/drive\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!cp Andrew_NG_Deep_Learning.zip /content/drive/MyDrive"
+      ],
+      "metadata": {
+        "id": "QTSjL2xpLrGu"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "He6-Wd4KLs5H"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
